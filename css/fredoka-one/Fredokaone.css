@@ -1,0 +1,13 @@
+/* fredoka-one-regular - latin */
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/fredokaone-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/fredokaone-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/fredokaone-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/fredokaone-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/fredokaone-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/fredokaone-regular.svg#FredokaOne') format('svg'); /* Legacy iOS */
+}
