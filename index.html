@@ -6,28 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="shortcut icon" href="images/favicon.ico">
   <title>삼양맛샵</title>
-  <!-- jquery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  
   <!-- html5shiv -->
   <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
+    <script src="js/html5shiv.js"></script>
     <![endif]-->
+
   <!-- vender-prefix -->
-  <!-- <script type="text/javascript" src="js/prefixfree.min.js"></script> -->
+  <script type="text/javascript" src="js/prefixfree.min.js"></script>
   <!-- swiper -->
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <script src="js/swiper/swiper.min.js"></script>
+  <!-- aos -->
+  <script type="text/javascript" src="js/aos/aos.js"></script>
+  <link rel="stylesheet" href="js/aos/aos.css">
+  <!-- jquery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <!-- normalize.css -->
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
-
-
-
   <div class="wrap">
+    <!-- serch modal -->
+    <div class="serch-modal">
+      <div class="serch-modal-cont">
+        <h3>인기검색어</h3>
+        <ul class="serch-modal-hash clearfix">
+          <li><a href="#">#불닭</a></li>
+          <li><a href="#">#불타는시리즈</a></li>
+          <li><a href="#">#로제</a></li>
+          <li><a href="#">#삼양라면</a></li>
+          <li><a href="#">#비건</a></li>
+          <li><a href="#">#뽀빠이</a></li>
+          <li><a href="#">#치즈</a></li>
+          <li><a href="#">#후추볶음면</a></li>
+        </ul>
+        <h3>최근검색어<span class="serch-modal-del">모두 지우기</span></h3>
+
+      </div>
+      <span class="serch-modal-close">
+        <img src="images/sd_close.png" alt="닫기태그">
+      </span>
+    </div>
     <!-- header -->
     <header class="header">
       <!-- top -->
@@ -47,12 +70,12 @@
             <div class="h-top-b-logo">
               <a href="#" class="h-logo"></a>
             </div>
-
             <div class="h-top-b-search">
               <div class="search-wrap">
                 <form action="" method="get" id="search-form">
                   <label for="search-txt"></label>
-                  <input type="text" id="search-txt" placeholder="검색어를 입력하세요.">
+                  <input type="text" id="search-txt" placeholder="검색어를 입력하세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='검색어를 입력하세요.'">
                   <input type="button" class="head-form" value="">
                 </form>
                 <i></i>
@@ -75,16 +98,60 @@
     <!-- //header// -->
     <!-- menu -->
     <section class="menu">
-              <div class="gnb">
-          <div class="container">
-          <ul class="menu-box">
-            <li><a href=""> <img src="images/menu_fold.png" alt="" class="menu-fold">삼양식품</a></li>
-            <li><a href="">맛샵PICK</a></li>
-            <li><a href="">굿즈샵</a></li>
-            <li><a href="">삼양 가치나눔</a></li>
-            <li></li>
-            <li><a href="">이벤트</a></li>
-            <li><a href="">삼양플레이</a></li>
+      <div class="gnb">
+        <span class="gnb-line"></span>
+        <div class="container">
+          <ul class="depth1">
+            <li>
+              <a href="#" class="main-menu"> <img src="images/menu_fold.png" alt="" class="menu-fold"><b>삼양식품</b></a>
+              <ul class="depth2">
+                <li><a href="#">불닭브랜드</a></li>
+                <li><a href="#">삼양브랜드</a></li>
+                <li><a href="#">라면</a></li>
+                <li><a href="#">소스</a></li>
+                <li><a href="#">스낵</a></li>
+                <li><a href="#">삼양목장</a></li>
+                <li><a href="#">간편식품</a></li>
+                <li><a href="#">냉동식품</a></li>
+                <li><a href="#">유제품</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="main-menu">맛샵PICK</a>
+              <ul class="depth2">
+                <li><a href="#">불타는시리즈</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="main-menu">굿즈샵</a>
+              <ul class="depth2">
+                <li><a href="#">불타는 시리즈</a></li>
+                <li><a href="#">온라인전용</a></li>
+                <li><a href="#">삼양굿즈</a></li>
+                <li><a href="#">불닭굿즈</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="main-menu">삼양 가치나눔</a>
+            </li>
+            <li>
+              <!-- 변동 메뉴 -->
+            </li>
+            <li>
+              <a href="#" class="main-menu">이벤트</a>
+              <ul class="depth2">
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">기획전</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="main-menu">삼양플레이</a>
+              <ul class="depth2">
+                <li><a href="#">페퍼 Story</a></li>
+                <li><a href="#">삼양 Recipe</a></li>
+                <li><a href="#">삼양유니버스</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -125,7 +192,7 @@
   <section class="new">
     <!-- best와 html/css 유사구조 -->
     <div class="container">
-      <div class="product-tit">
+      <div class="product-tit" data-aos="fade-down" data-aos-duration="1500">
         <h2>New Arrival</h2>
         <span>늘 새롭게 <strong>신상품</strong></span>
       </div>
@@ -208,7 +275,6 @@
             <span class="best-product-img-box best-bg-1">
               <a href="#" class="best-product-img best-img-1"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[삼양목장] 우유로 만든 딸기전병 8g x 18입</a>
                 <span class="best-text">
@@ -218,14 +284,11 @@
                 </span>
               </span>
             </span>
-
-
           </li>
           <li>
             <span class="best-product-img-box best-bg-2">
               <a href="#" class="best-product-img best-img-2"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[페퍼밀] 불타는 고추짜장 137g x 4입</a>
                 <span class="best-text">
@@ -240,7 +303,6 @@
             <span class="best-product-img-box best-bg-3">
               <a href="#" class="best-product-img best-img-3"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[삼양맛샵] 불닭볶음면 140g x 5입</a>
                 <span class="best-text">
@@ -250,8 +312,6 @@
                 </span>
               </span>
             </span>
-
-
           </li>
         </ul>
         <ul class="best-pro-box pro-box-wh-2">
@@ -259,7 +319,6 @@
             <span class="best-product-img-box best-bg-4">
               <a href="#" class="best-product-img best-img-4"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[삼양식품] 맛있는라면 비건 100g x 4입</a>
                 <span class="best-text">
@@ -269,24 +328,22 @@
                 </span>
               </span>
             </span>
-
-
           </li>
           <li>
             <span class="best-product-img-box best-bg-5">
-              <div class="product-tit best-pro-tit">
-                <h2>Best Item</h2>
-                <span>가장 많이 팔리는<br>
-                  <strong>베스트상품</strong></span>
+              <div class=" best-pro-tit">
+                <div class="product-tit" data-aos="fade-down" data-aos-duration="1500">
+                  <h2>Best Item</h2>
+                  <span>가장 많이 팔리는<br>
+                    <strong>베스트상품</strong></span>
+                </div>
               </div>
-
             </span>
           </li>
           <li>
             <span class="best-product-img-box best-bg-6">
               <a href="#" class="best-product-img best-img-6"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[삼양식품] 사또밥 67g</a>
                 <span class="best-text">
@@ -296,8 +353,6 @@
                 </span>
               </span>
             </span>
-
-
           </li>
         </ul>
         <ul class="best-pro-box pro-box-wh-3">
@@ -305,7 +360,6 @@
             <span class="best-product-img-box best-bg-7">
               <a href="#" class="best-product-img best-img-7"></a>
               <i class="product-icon"></i>
-
               <span class="best-pro-text-box">
                 <a href="#">[삼양냉동] 삼양 불닭만두 1350g x 2봉</a>
                 <span class="best-text">
@@ -315,8 +369,6 @@
                 </span>
               </span>
             </span>
-
-
           </li>
           <li>
             <span class="best-product-img-box best-bg-8">
@@ -359,7 +411,7 @@
   <section class="md">
     <div class="container">
       <div class="container">
-        <div class="product-tit">
+        <div class="product-tit" data-aos="fade-down" data-aos-duration="1500">
           <h2>MD's Pick</h2>
           <span>직원들이 픽! 했다! <strong>엠디픽</strong></span>
         </div>
@@ -376,7 +428,6 @@
                 <span class="md-text">
                   <strong class="pro-text-strong">20%</strong>
                   <p class="pro-text-p">4,200원</p>
-
                 </span>
               </span>
             </li>
@@ -390,10 +441,8 @@
                 <span class="md-text">
                   <strong class="pro-text-strong">20%</strong>
                   <p class="pro-text-p">24,800원</p>
-
                 </span>
               </span>
-
             </li>
             <li>
               <span class="product-img-box">
@@ -405,10 +454,8 @@
                 <span class="md-text">
                   <strong class="pro-text-strong">20%</strong>
                   <p class="pro-text-p">1,200원</p>
-
                 </span>
               </span>
-
             </li>
             <li>
               <span class="product-img-box">
@@ -420,10 +467,8 @@
                 <span class="md-text">
                   <strong class="pro-text-strong">18%</strong>
                   <p class="pro-text-p">1,310원</p>
-
                 </span>
               </span>
-
             </li>
           </ul>
         </div>
@@ -435,22 +480,52 @@
   <section class="choose">
     <div class="container">
       <div class="choose-top">
-        <img src="images/choose_title.png" alt="">
+        <img src="images/choose_title.png" alt="help you choose">
       </div>
-      <div class="choose-left">
-        
+      <div class="choose-bottom clearfix">
+        <div class="choose-left">
+          <button class="choose-bt choose-bt1"></button>
+          <button class="choose-bt choose-bt2"></button>
+          <div class="choose-cont choose-1">
+            <img src="images/choose_txt01.png" alt="취향존중 그림">
+            <ul class="choose-hashtag clearfix">
+              <li><a href="#">든든함</a></li>
+              <li><a href="#">간편함</a></li>
+              <li><a href="#">독특함</a></li>
+              <li><a href="#">혼술</a></li>
+              <li><a href="#">여행</a></li>
+              <li><a href="#">비건</a></li>
+            </ul>
+          </div>
+          <div class="choose-cont choose-2">
+            <img src="images/choose_txt02.png" alt="맛존중 그림">
+            <ul class="choose-hashtag clearfix">
+              <li><a href="#">매운맛</a></li>
+              <li><a href="#">진한맛</a></li>
+              <li><a href="#">외쿡맛</a></li>
+              <li><a href="#">고소한맛</a></li>
+              <li><a href="#">달콤한맛</a></li>
+              <li><a href="#">바다의맛</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="choose-right">
+          <img src="images/choose_salt.png" alt="고양이그림">
+          <div class="choose-glasses">
+            <span class="glasses">
+              <img class="glass g1" src="images/salt_glass.png" alt="고양이안경">
+              <img class="glass g2" src="images/salt_glass.png" alt="고양이안경">
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="choose-right">
-        <img src="images/choose_salt.png" alt="">
-      </div>
-      <div class="choose-text-box"></div>
     </div>
   </section>
   <!-- //choose// -->
   <!-- diary -->
   <section class="diary">
     <div class="container">
-      <div class="product-tit">
+      <div class="product-tit" data-aos="fade-down" data-aos-duration="1500">
         <h2>Pepper Story</h2>
         <span>페퍼와 솔트의 <strong>일기</strong></span>
       </div>
@@ -488,19 +563,72 @@
   <!-- brandstroy -->
   <section class="brandstroy">
     <div class="brandstory-top">
-      <div class="brandstory-tit">
-        <h2>Samyang Brand</h2>
-        <span>
-          브랜드스토리
-        </span>
-        <p>삼양식품은 제품의 고급화와 맛과 영양의 차별화를 위해 질 높은 천연원료를 사용하여<br>
-          한국적이고 전통적인 맛을 지닌 우수식품을 공급하고 있습니다.</p>
-      </div>
-      <div class="brandstory-bottom">
-
-        <div class="more">
-          <a href="#"><em>브랜드스토리</em> 더보기 +</a>
+      <div class="container">
+        <div class="brandstory-tit" data-aos="fade-down" data-aos-duration="1500">
+          <h2>Samyang Brand</h2>
+          <span>
+            브랜드스토리
+          </span>
+          <p>삼양식품은 제품의 고급화와 맛과 영양의 차별화를 위해 질 높은 천연원료를 사용하여<br>
+            한국적이고 전통적인 맛을 지닌 우수식품을 공급하고 있습니다.</p>
         </div>
+        <div class="brand-ani-position">
+          <img class="brand-ani brand-ani-img1" src="images/cloud01.png" alt="구름1">
+          <img class="brand-ani brand-ani-img2" src="images/cloud02.png" alt="구름2">
+          <img class="brand-ani brand-ani-img3" src="images/hochi.png" alt="호치캐릭터">
+        </div>
+      </div>
+    </div>
+    <div class="brandstory-bottom">
+      <div class="swiper-container brand-sw-container">
+        <div class="swiper-wrapper brand-sw-wrap">
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">1963</p>
+              <img src="images/brand01.png" alt="삼양라면">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">1970</p>
+              <img src="images/brand02.png" alt="짜짜로니">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">1972</p>
+              <img src="images/brand03.png" alt="별뽀빠이">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">1973</p>
+              <img src="images/brand04.png" alt="짱구">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">2012</p>
+              <img src="images/brand05.png" alt="불닭볶음면">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">2020</p>
+              <img src="images/brand06.png" alt="불타는고추짜장">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand-cont">
+              <p class="brand-txt">2021</p>
+              <img src="images/brand07.png" alt="4가지치즈불닭볶음면">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="more">
+        <a href="#"><em>브랜드스토리</em> 더보기 +</a>
       </div>
     </div>
   </section>
@@ -508,7 +636,7 @@
   <!-- recipe -->
   <section class="recipe">
     <div class="container">
-      <div class="product-tit">
+      <div class="product-tit" data-aos="fade-down" data-aos-duration="1500">
         <h2>Recipe</h2>
         <span>이렇게 즐겨보세요! <strong>레시피</strong></span>
       </div>
@@ -568,7 +696,7 @@
   <!-- event -->
   <section class="event">
     <div class="container">
-      <div class="event-title">이벤트&기획전</div>
+      <div class="event-title" data-aos="fade-down">이벤트&기획전</div>
       <div class="event-part">
         <ul class="event-box">
           <li>
@@ -597,9 +725,12 @@
   <!-- youtube -->
   <section class="youtube">
     <div class="container">
-      <div class="youtube-title">삼양 TV</div>
+      <div class="youtube-title" data-aos="fade-down" data-aos-duration="1500" data-aos-duration="1500">삼양 TV</div>
       <div>
-        <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/PmilarobRjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/PmilarobRjc"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>
