@@ -2,6 +2,10 @@ $(document).ready(function () {
     AOS.init({
         once: true
     });
+    // 안내창 닫기
+    $('.modal').click(function () {
+        $('.modal').fadeOut();
+    });
     // scroll
     let menuOffset = $('.menu').offset();
     $(window).scroll(function () {
